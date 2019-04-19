@@ -9,7 +9,11 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env, argv) => {
     return {
-        entry: [ path.resolve(__dirname, 'src/js/index.js') ],
+        entry: [  
+            path.resolve(__dirname, 'src/js/index.js'),
+            path.resolve(__dirname, 'src/scss/main.scss'),
+            path.resolve(__dirname,'src/vendors/mdb/scss/mdb.scss'),
+        ],
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: 'bundle.js',
@@ -23,7 +27,8 @@ module.exports = (env, argv) => {
                     exclude: /(node_modules|bower_components|vendors)/,
                     loader: 'eslint-loader',
                     options: {
-                        fix: true,
+                        // @TODO - make it false to prevent auto-fixing
+                        fix: true,  
                     },
                 },
                 {
