@@ -53,7 +53,7 @@
   },
   "scripts": {
     "eslint": "eslint src/js/**/*.js",
-    "start": "webpack-dev-server --mode development --open --hot --host 0.0.0.0",
+    "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "repository": {
