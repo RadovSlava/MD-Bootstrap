@@ -8,3 +8,5 @@ import 'bootstrap';
 import '../vendors/mdb/js/mdb';
 
 import './components/imageViewer';
+
+import './components/RreadMoreReadLess';

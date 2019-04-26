@@ -1,0 +1,25 @@
+.read-more-read-less {
+    &__title {
+      background-color: white;
+    }
+  
+    &__content {
+      background-color: white;
+    }
+  
+    &__dots {
+      display: inline-block;
+    }
+  
+    &__more {
+      display: none;
+    }
+  
+    &__cta {
+        border: 2px solid black;
+        width: 20%;
+        border-radius: 10px;
+        background-color: lightgrey;
+        margin: 0 auto; 
+    }
+  }
