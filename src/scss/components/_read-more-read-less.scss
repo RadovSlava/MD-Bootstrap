@@ -1,25 +1,22 @@
 .read-more-read-less {
-    &__title {
-      background-color: white;
-    }
-  
-    &__content {
-      background-color: white;
-    }
-  
-    &__dots {
-      display: inline-block;
-    }
-  
-    &__more {
-      display: none;
-    }
-  
-    &__cta {
-        border: 2px solid black;
-        width: 20%;
-        border-radius: 10px;
-        background-color: lightgrey;
-        margin: 0 auto; 
-    }
+  .hide {
+    display: none;
   }
+
+   &__title {
+    background-color: yellow;
+  }
+
+   &__content {
+    background-color: red;
+  }
+
+   &__dots,
+  &__more {
+    display: inline-block;
+  }
+
+   &__cta {
+    background-color: blue;
+  }
+}

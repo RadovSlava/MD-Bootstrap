@@ -1,4 +1,9 @@
-.product_rating{
-    display: inline-block;
-   color: gold;
+.product__rating {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        color: #e6c541;
+    }
 }
