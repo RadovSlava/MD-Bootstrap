@@ -1,9 +1,15 @@
-.product__rating {
+.product__rating, 
+.rating {
     padding: 0;
-    list-style-type: none;
+    list-style-type: none; 
 
     li {
         display: inline-block;
+    }
+}
+
+.product__rating {
+    li {
         color: #e6c541;
     }
 }

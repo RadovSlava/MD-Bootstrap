@@ -9,10 +9,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env, argv) => {
     return {
-        entry: [  
+        entry: [
             path.resolve(__dirname, 'src/js/index.js'),
             path.resolve(__dirname, 'src/scss/main.scss'),
-            path.resolve(__dirname,'src/vendors/mdb/scss/mdb.scss'),
+            path.resolve(__dirname, 'src/vendors/mdb/scss/mdb.scss'),
         ],
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -28,7 +28,7 @@ module.exports = (env, argv) => {
                     loader: 'eslint-loader',
                     options: {
                         // @TODO - make it false to prevent auto-fixing
-                        fix: true,  
+                        fix: true,
                     },
                 },
                 {
@@ -66,6 +66,14 @@ module.exports = (env, argv) => {
                         outputPath: 'assets/',
                     },
                 },
+                {
+                    test: /\.hbs$/,
+                    loader: 'handlebars-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        useRelativePath: true,
+                    },
+                },
             ],
         },
         plugins: [
@@ -73,17 +81,22 @@ module.exports = (env, argv) => {
                 template: 'src/index.html',
                 inject: 'body',
                 filename: 'index.html',
-              }),
-              new HtmlWebPackPlugin({
+            }),
+            new HtmlWebPackPlugin({
                 template: 'src/pdp.html',
                 inject: 'body',
                 filename: 'pdp.html',
-              }),
-              new HtmlWebPackPlugin({
+            }),
+            new HtmlWebPackPlugin({
                 template: 'src/contact-us.html',
                 inject: 'body',
                 filename: 'contactus.html',
-              }), 
+            }),
+            new HtmlWebPackPlugin({
+                template: 'src/plp.html',
+                inject: 'body',
+                filename: 'products.html',
+            }),
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery',
@@ -91,7 +104,7 @@ module.exports = (env, argv) => {
                 'window.jQuery': 'jquery',
                 Waves: 'node-waves',
                 _: 'underscore',
-                Promise: 'es6-promise',
+                Promise: 'es6-promise'
             }),
             new MiniCssExtractPlugin({
                 filename: argv.mode !== 'production' ? '[name].css' : '[name].[hash].css',
