@@ -1,3 +1,5 @@
+import './components/header/header';
+
 // jQuery
 import 'jquery';
 // PopperJS
