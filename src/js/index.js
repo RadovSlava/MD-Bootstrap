@@ -1,4 +1,5 @@
 import './components/header/header';
+import './components/footer/footer';
 
 // jQuery
 import 'jquery';
